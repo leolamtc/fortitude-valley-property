@@ -198,9 +198,6 @@ with st.sidebar:
         format="$%d"
     )
     
-    # Address Keyword Filter
-    search_keyword = st.text_input("🔍 Search Address / Street:", placeholder="e.g. Connor St, Brunswick...")
-    
     st.markdown("---")
     st.caption("🎯 **Target Property Type:** 1 Bedroom, 1 Car Space Apartment in Fortitude Valley QLD 4006.")
     
@@ -222,9 +219,6 @@ df_filtered = df_prop[
     (df_prop['median_price'] >= price_range[0]) &
     (df_prop['median_price'] <= price_range[1])
 ]
-
-if search_keyword:
-    df_filtered = df_filtered[df_filtered['address'].astype(str).str.contains(search_keyword, case=False, na=False)]
 
 # ─── Hero Header ───────────────────────────────────────────────────────────────
 st.markdown("""
@@ -413,30 +407,21 @@ with tab2:
         st.info("Run `python main.py` to populate SQM Research market indicators.")
 
     st.markdown("---")
-    st.subheader("🏢 Fortitude Valley 1-Bed / 1-Car Property Sales Explorer")
+    st.markdown("### 🔗 Direct Verified SQM Research Links for Fortitude Valley (Postcode 4006)")
     
-    if not df_filtered.empty:
-        display_df = df_filtered[['date_scraped', 'address', 'suburb', 'bedrooms', 'car_spaces', 'median_price', 'source_url']].copy()
-        display_df.columns = ['Date', 'Address', 'Suburb', 'Beds', 'Cars', 'Price', 'Listing Link']
-        display_df['Date'] = display_df['Date'].dt.strftime('%d %b %Y')
-        display_df['Address'] = display_df['Address'].fillna('Fortitude Valley QLD')
-        
-        st.dataframe(
-            display_df,
-            use_container_width=True,
-            height=350,
-            hide_index=True,
-            column_config={
-                "Price": st.column_config.NumberColumn(
-                    "Price (AUD)",
-                    format="$%d"
-                ),
-                "Listing Link": st.column_config.LinkColumn(
-                    "Property Listing",
-                    display_text="🔍 View Sold Listings on Domain"
-                )
-            }
-        )
+    sqm_links_col1, sqm_links_col2 = st.columns(2)
+    with sqm_links_col1:
+        st.markdown("""
+        - 📈 [SQM Asking Property Prices — 4006](https://sqmresearch.com.au/asking-property-prices.php?postcode=4006&t=1)
+        - 🏠 [SQM Total Property Listings / Stock on Market](https://sqmresearch.com.au/property/total-property-listings?postcode=4006&t=1)
+        - 🏢 [SQM Postcode 4006 Demographics & Profile](https://sqmresearch.com.au/property/demographics?postcode=4006&t=1)
+        """)
+    with sqm_links_col2:
+        st.markdown("""
+        - 🔑 [SQM Residential Vacancy Rates — 4006](https://sqmresearch.com.au/property/vacancy-rates?postcode=4006&t=1)
+        - 💵 [SQM Weekly Rents — 4006](https://sqmresearch.com.au/property/weekly-rents?postcode=4006&t=1)
+        - 📊 [SQM Gross Rental Yield — 4006](https://sqmresearch.com.au/property/rental-yield?postcode=4006&t=1)
+        """)
 
 # ─── TAB 3: Infrastructure Announcements ───────────────────────────────────────
 with tab3:
