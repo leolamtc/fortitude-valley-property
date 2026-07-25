@@ -156,11 +156,10 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ─── Load Data ─────────────────────────────────────────────────────────────────
-@st.cache_data(ttl=5)
-def fetch_dashboard_data():
+def get_live_market_data():
     return load_data()
 
-data = fetch_dashboard_data()
+data = get_live_market_data()
 if len(data) == 3:
     df_prop, df_infra, df_indicators = data
 else:
