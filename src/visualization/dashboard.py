@@ -156,7 +156,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ─── Load Data ─────────────────────────────────────────────────────────────────
-@st.cache_data(ttl=60)
+@st.cache_data(ttl=5)
 def fetch_dashboard_data():
     return load_data()
 
