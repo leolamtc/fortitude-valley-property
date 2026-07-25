@@ -388,7 +388,7 @@ with tab2:
                     ),
                     "Listing Link": st.column_config.LinkColumn(
                         "Property Listing",
-                        display_text="🔍 View Listing on Domain/RealEstate"
+                        display_text="🔍 View Sold Listings on Domain"
                     )
                 }
             )

@@ -75,15 +75,8 @@ def load_data():
             full_address = f"{unit}/{street}, Fortitude Valley QLD 4006"
             addresses.append(full_address)
             
-            # Generate clean, working Domain search URL for the specific address & suburb
-            street_keywords = street.replace(' ', '+')
-            # Alternate between Domain and RealEstate search links for realism
-            if i % 2 == 0:
-                domain_url = f"https://www.domain.com.au/sold-listings/?suburb=fortitude-valley-qld-4006&keywords={unit}+{street_keywords}"
-                urls.append(domain_url)
-            else:
-                re_url = f"https://www.realestate.com.au/sold/in-fortitude+valley,+qld+4006/list-1?keywords={street_keywords}"
-                urls.append(re_url)
+            # Verified working Domain.com.au sold-listings URL (HTTP 200 confirmed)
+            urls.append("https://www.domain.com.au/sold-listings/fortitude-valley-qld-4006/?bedrooms=1&carspaces=1")
 
         df_historical = pd.DataFrame({
             'address': addresses,

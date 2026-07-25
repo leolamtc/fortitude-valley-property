@@ -63,16 +63,16 @@ def scrape_infrastructure_news():
             print("No articles found on the live page, using mock data for demonstration.")
             mock_announcements = [
                 {
-                    "title": "Queensland Government Unveils Brisbane 2032 Master Infrastructure Plan",
-                    "date_announced": "2023-11-20",
-                    "summary": "Official announcement of the Brisbane 2032 Olympic Games master infrastructure framework, connecting Cross River Rail, transport hubs, and venue precincts.",
-                    "url": "https://statements.qld.gov.au/Search?searchTerm=Brisbane+2032+Olympic+Games+Infrastructure"
+                    "title": "Queensland company to dig deep for Brisbane Stadium",
+                    "date_announced": "2025-06-18",
+                    "summary": "A Queensland company has been selected for geotechnical investigations for the new Brisbane Stadium, a key venue for the 2032 Olympic and Paralympic Games.",
+                    "url": "https://statements.qld.gov.au/statements/105600"
                 },
                 {
-                    "title": "Brisbane Arena & Gabba Entertainment Precinct Delivery Confirmed",
-                    "date_announced": "2024-02-15",
-                    "summary": "State and Federal commitment for the new Brisbane Arena indoor precinct and nearby transport links servicing Fortitude Valley and inner Brisbane.",
-                    "url": "https://statements.qld.gov.au/Search?searchTerm=Gabba+Entertainment+and+Housing+Precinct"
+                    "title": "Queensland Spirit: A bold new vision for the future of sport on the road to 2032",
+                    "date_announced": "2025-07-04",
+                    "summary": "The Queensland Government unveils a bold new vision for the future of sport, health and active recreation ahead of the Brisbane 2032 Olympic and Paralympic Games.",
+                    "url": "https://statements.qld.gov.au/statements/105647"
                 }
             ]
             

@@ -58,7 +58,7 @@ def scrape_property_prices():
                 car_spaces=1,
                 median_price=median_price,
                 date_scraped=date_scraped,
-                source_url="https://www.domain.com.au/sold-listings/?suburb=fortitude-valley-qld-4006&keywords=25+Connor+St"
+                source_url="https://www.domain.com.au/sold-listings/fortitude-valley-qld-4006/?bedrooms=1&carspaces=1"
             )
             print(f"Successfully scraped and saved price: ${median_price:,.2f} (1-bed, 1-car)")
         else:
