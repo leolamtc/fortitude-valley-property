@@ -423,7 +423,7 @@ with tab3:
         title = row.get('title', 'Infrastructure Upgrade')
         summary = row.get('summary', 'Major infrastructure announcement for Brisbane / Fortitude Valley.')
         date_str = pd.to_datetime(row['date_announced']).strftime('%d %B %Y') if pd.notnull(row['date_announced']) else "N/A"
-        source_link = row.get('source_url', 'https://statements.qld.gov.au')
+        source_link = row.get('url') or row.get('source_url') or "https://statements.qld.gov.au/Search?searchTerm=Brisbane+2032+Olympics"
 
         st.markdown(f"""
         <div style="background: #1e293b; border-left: 4px solid #f97316; padding: 1.25rem; border-radius: 8px; margin-bottom: 1rem;">

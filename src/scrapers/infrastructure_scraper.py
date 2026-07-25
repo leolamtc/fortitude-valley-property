@@ -63,16 +63,16 @@ def scrape_infrastructure_news():
             print("No articles found on the live page, using mock data for demonstration.")
             mock_announcements = [
                 {
-                    "title": "New Gabba Stadium Redevelopment Plan Announced",
+                    "title": "Queensland Government Unveils Brisbane 2032 Master Infrastructure Plan",
                     "date_announced": "2023-11-20",
-                    "summary": "The Queensland Government has unveiled the $2.7 billion redevelopment plan for The Gabba.",
-                    "url": "https://statements.qld.gov.au/statements/mock1"
+                    "summary": "Official announcement of the Brisbane 2032 Olympic Games master infrastructure framework, connecting Cross River Rail, transport hubs, and venue precincts.",
+                    "url": "https://statements.qld.gov.au/Search?searchTerm=Brisbane+2032+Olympic+Games+Infrastructure"
                 },
                 {
-                    "title": "Brisbane Arena to be fully funded by Federal Government",
+                    "title": "Brisbane Arena & Gabba Entertainment Precinct Delivery Confirmed",
                     "date_announced": "2024-02-15",
-                    "summary": "A new $2.5 billion Brisbane Arena will be built at Roma Street.",
-                    "url": "https://statements.qld.gov.au/statements/mock2"
+                    "summary": "State and Federal commitment for the new Brisbane Arena indoor precinct and nearby transport links servicing Fortitude Valley and inner Brisbane.",
+                    "url": "https://statements.qld.gov.au/Search?searchTerm=Gabba+Entertainment+and+Housing+Precinct"
                 }
             ]
             
