@@ -41,6 +41,19 @@ def init_db():
         )
     """)
     
+    # Table for SQM / Domain market indicators
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS market_indicators (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            metric_name TEXT NOT NULL,
+            metric_value TEXT NOT NULL,
+            category TEXT NOT NULL,
+            source TEXT NOT NULL,
+            source_url TEXT,
+            date_scraped TEXT NOT NULL
+        )
+    """)
+    
     conn.commit()
     conn.close()
 
@@ -63,6 +76,17 @@ def save_infrastructure_announcement(title, date_announced, summary, url, date_s
     """, (title, date_announced, summary, url, date_scraped))
     conn.commit()
     conn.close()
+
+def save_market_indicator(metric_name, metric_value, category, source, source_url, date_scraped):
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute("""
+        INSERT INTO market_indicators (metric_name, metric_value, category, source, source_url, date_scraped)
+        VALUES (?, ?, ?, ?, ?, ?)
+    """, (metric_name, metric_value, category, source, source_url, date_scraped))
+    conn.commit()
+    conn.close()
+
 
 if __name__ == "__main__":
     init_db()
